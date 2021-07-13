@@ -4,12 +4,12 @@ import {useState, useEffect} from "react"
 
 
 
-function Painting({painting}) {
-const paintInfo = painting.map(paint => {
-            key={paint.id} 
-            paint={paint}
+function Collection({painting}) {
+// const paintInfo = painting.map(paint => {
+//             key={paint.id} 
+//             paint={paint}
  
-    })
+//     })
 
   return (
     <div className="App">   
@@ -20,4 +20,4 @@ const paintInfo = painting.map(paint => {
   );
 }
 
-export default Painting;
+export default Collection;

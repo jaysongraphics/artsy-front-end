@@ -1,12 +1,12 @@
 import React from "react";
-// import from "";
 
 
 
-function Gallery() {
+function Gallery({paintings}) {
+
+  
   return (
-    <div className="App">    
-       <Nav />
+    <div >    
     </div>
   );
 }

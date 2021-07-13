@@ -3,11 +3,12 @@ import {useState, useEffect} from "react"
 
 
 
-function Nav() {
+function SlideShow() {
+
   return (
-    <div >   
+    <div>    
     </div>
   );
 }
 
-export default Nav;
+export default SlideShow;
