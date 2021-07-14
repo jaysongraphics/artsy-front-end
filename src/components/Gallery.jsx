@@ -15,7 +15,7 @@ function Gallery({paintings, galleries, reviews}) {
   })  
   
   return (
-    <div >
+    <div className="gallery-div" >
         <h1>Galleries</h1>
         <div className="galleries">
           {galleryInfo}

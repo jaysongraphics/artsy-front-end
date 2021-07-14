@@ -6,7 +6,7 @@ import Painting from "./Painting"
 function BuyerCollection() {
 
   return (
-    <div >
+    <div className="buyer-collection">
       <h1>BuyerCollection</h1>
     </div>
 )}

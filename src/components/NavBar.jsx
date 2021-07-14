@@ -6,16 +6,16 @@ import SearchBar from "./SearchBar"
 
 function NavBar() {
   return (
-    <div id='navVertical' className="ui large vertical menu" >
-        <nav className="nav_bar">
+    <div id='navVertical' className="ui inverted vertical pointing menu" >
+        <nav className="nav_bar" className=''>
           <Link to="/">
-          <button class="ui button">Home</button>
+          <button id="bhover" class="ui black button">Home</button>
           </Link>
           <Link to="/gallery">
-          <button class="ui button">Galleries</button>
+          <button id="bhover"class="ui black button">Galleries</button>
           </Link>
           <Link to="/buyercollection">
-          <button class="ui button">Buyer Collection</button>
+          <button id="bhover" class="ui black button">Buyer Collection</button>
           </Link>
           <SearchBar />
         </nav>         

@@ -6,7 +6,7 @@ import Painting from "./Painting"
 function UpcomingGallery() {
 
   return (
-    <div >
+    <div className="upcoming-gallery">
       <h1>UpcomingGallery</h1>
     </div>
 )}

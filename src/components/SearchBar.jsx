@@ -6,15 +6,31 @@ import Input from '@material-ui/core/Input';
 
 
 function SearchBar () {
-
-
     return(
-        <form className="ui mini icon input">
+     <div className="search-bar">
+        <div class="ui inverted divider"></div>
+        <div class="ui inverted left icon input">
+          <input type="text" placeholder="Search..."/>
+          <i class="search icon"></i>
+        </div>
+    </div>
+  )
+}
+    
+    export default SearchBar
+    
+    
+    {/* //    <div className="search-bar" >
+    //     <div class="ui divider"></div>
+    //     <div class="ui icon input">
+    //       <input type="text" placeholder="Search..." />
+    //       <i class="search icon"></i>
+    //     </div>
+       </div> */}
+
+        {/* <div class="ui icon input">
+        <form className="">
             <input type="text" placeholder="Search..." value="" />
             <i class="search icon"></i>
         </form>
-    )
-}
-
-
-export default SearchBar
+        </div> */}

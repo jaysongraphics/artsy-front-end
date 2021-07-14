@@ -6,7 +6,7 @@ import Painting from "./Painting"
 function ArtistCollection() {
 
   return (
-    <div >
+    <div className="artist-collection">
       <h1>ArtistCollection</h1>
     </div>
 )}
