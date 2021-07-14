@@ -1,10 +1,13 @@
 import React from "react";
 import {useEffect, useState} from "react"
 import Gallery from "./Gallery";
+import SlideShow from "./SlideShow"
+import Painting from "./Painting"
 
-function MainPage() {
+function HomePage() {
     const [paintings, setPaintings] = useState([])
     const [galleries, setGalleries] = useState([])
+    const [reviews, setReviews] = useState([])
   
     useEffect(() =>{
       fetch('http://localhost:9393/painting')
@@ -13,11 +16,17 @@ function MainPage() {
     }, []);
     console.log(paintings);
 
-    // useEffect(() =>{
-    //   fetch('http://localhost:9393/gallary')
-    //   .then(res => res.json())
-    //   .then(galleryArray => setGalleries(galleryArray))
-    // }, []);
+    useEffect(() =>{
+      fetch('http://localhost:9393/gallery')
+      .then(res => res.json())
+      .then(galleryArray => setGalleries(galleryArray))
+    }, []);
+
+    useEffect(() =>{
+      fetch('http://localhost:9393/reviews')
+      .then(res => res.json())
+      .then(reviewArray => setReviews(reviewArray))
+    }, []);
   
   
     // const handleClick = () => {
@@ -31,7 +40,11 @@ function MainPage() {
         <div>
           <Gallery 
           paintings={paintings}
+          galleries={galleries}
+          reviews={reviews}
           />
+          <SlideShow paintings={paintings}/>
+          <Painting paintings={paintings}/>
 
           
           {/* <button onClick={handleClick}>
@@ -42,4 +55,4 @@ function MainPage() {
   }
   
 
-export default MainPage;
+export default HomePage;

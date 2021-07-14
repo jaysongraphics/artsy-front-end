@@ -1,23 +1,22 @@
 import React from "react";
 import {useState, useEffect} from "react"
+import PaintingsCard from "./PaintingCard";
 // import from "";
 
 
 
-function Collection({painting}) {
-// const paintInfo = painting.map(paint => {
-//             key={paint.id} 
-//             paint={paint}
+function Painting({paintings}) {
+const paintingsDisplay = paintings.map (painting => {
+  return <PaintingsCard key={painting.id} painting={painting}/>
+          
  
-//     })
+    })
 
   return (
-    <div className="App">   
-
-
-       {/* <Nav /> */}
+    <div className="paintings">
+      {paintingsDisplay}
     </div>
   );
 }
 
-export default Collection;
+export default Painting;
