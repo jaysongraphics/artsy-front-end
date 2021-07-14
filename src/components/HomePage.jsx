@@ -27,6 +27,10 @@ function HomePage() {
       .then(res => res.json())
       .then(reviewArray => setReviews(reviewArray))
     }, []);
+
+    console.log(reviews)
+
+   
   
   
     // const handleClick = () => {
@@ -38,11 +42,13 @@ function HomePage() {
   
       return(
         <div>
-          <Gallery 
-          paintings={paintings}
-          galleries={galleries}
-          reviews={reviews}
-          />
+            <Gallery 
+              paintings={paintings}
+              galleries={galleries}
+              reviews={reviews}
+            />
+    
+
           <SlideShow paintings={paintings}/>
 
           

@@ -4,6 +4,9 @@ import Painting from "./Painting"
 
 
 function Gallery({paintings, galleries, reviews}) {
+  const {id, comment, gallery_id, buyer_id} = reviews
+  
+  const galleryReview = reviews.map (review => <li> {review.comment} </li>)
   const galleryInfo = galleries.map (gallery => {
     return (
       <div>
@@ -11,16 +14,24 @@ function Gallery({paintings, galleries, reviews}) {
         <p>Location: {gallery.location}</p>
         <p>Date: {gallery.date}</p>
         <p>Time: {gallery.time}</p>
+        <p>Reviews: {galleryReview} </p>
       </div>)
   
-  const galleryReview = reviews.map ((review) => {review.comment})
+  // const galleryReview = reviews.filter() 
 
   })  
   
   return (
     <div >
-      {galleryInfo}    
+      <div className="galleries">
+        {galleryInfo}
+       
+      </div>
+      
+
       <Painting paintings={paintings}/>
+        
+      
     </div>
   );
 }

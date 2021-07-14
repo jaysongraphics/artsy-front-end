@@ -4,13 +4,13 @@ import {useState, useEffect} from "react"
 
 
 function SlideShow({paintings}) {
-  // imgSrc = paintings.map (painting => {
-  //   <img src={painting.image}/>
-  // }) 
+  const imgSrc = paintings.map (painting => {
+    <li> <img src={painting.image}/> </li>
+  }) 
 
   return (
     <div className="slide_show">
-      {/* {imgSrc}     */}
+      {imgSrc}    
     </div>
   )
 }
