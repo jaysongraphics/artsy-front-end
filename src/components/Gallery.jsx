@@ -10,7 +10,7 @@ function Gallery({paintings, galleries, reviews}) {
         <p>Location: {gallery.location}</p>
         <p>Date: {gallery.date}</p>
         <p>Time: {gallery.time}</p>
-        <p>Reviews: {galleryReview} </p>
+        <p>Reviews: {galleryReview.slice(1, 5)} </p>
       </div>)
   })  
   
@@ -20,9 +20,9 @@ function Gallery({paintings, galleries, reviews}) {
         <div className="galleries">
           {galleryInfo}
         </div>
-        <Painting 
+        {/* <Painting 
         paintings={paintings}
-        />
+        /> */}
     </div>
   );
 }

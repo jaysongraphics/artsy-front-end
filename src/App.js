@@ -10,6 +10,9 @@ import BuyerCollection from './components/BuyerCollection'
 import 'semantic-ui-css/semantic.min.css'
 // import 'semantic-ui-css/semantic.js'
 import searchBar from './components/SearchBar'
+import LogIn from './components/LogIn'
+import SignUp from './components/SignUp'
+
 
 function App() {
   const [paintings, setPaintings] = useState([])
@@ -51,6 +54,8 @@ function App() {
               />} 
               />
               <Route path="/buyercollection" component={BuyerCollection} />
+              <Route path="/login"  component={LogIn}/>
+              <Route path="/signup"  component={SignUp}/>
               </Switch>
           </div>
       </Router>

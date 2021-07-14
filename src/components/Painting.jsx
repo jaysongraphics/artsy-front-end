@@ -7,10 +7,8 @@ import PaintingsCard from "./PaintingCard";
 
 function Painting({paintings}) {
 const paintingsDisplay = paintings.map (painting => {
-  return <PaintingsCard key={painting.id} painting={painting}/>
-          
- 
-    })
+  return <PaintingsCard key={painting.id} painting={painting}/>  
+})
 
   return (
     <div className="paintings">

@@ -3,12 +3,12 @@ import Painting from "./Painting"
 
 
 
-function BuyerCollection() {
+function SignUp() {
 
   return (
     <div className="buyer-collection">
-      <h1>Buyer Collection</h1>
+      <h1>Sign up</h1>
     </div>
 )}
 
-export default BuyerCollection;
+export default SignUp;

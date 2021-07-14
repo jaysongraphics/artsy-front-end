@@ -89,7 +89,7 @@
   width: 180px;
   margin: 7px;
 }
-.buyer-collection{
+.login-div{
   margin: 0px;
   padding: 0px;
   position: relative;
@@ -136,3 +136,24 @@
 .nav_bar {
   position: fixed;
 }  
+
+.gallery-div{
+  background-color: rgb(221, 221, 221);
+}
+
+#login-buttons{
+  position: relative;
+  /* top: 0px; */
+  left: 200px;
+  bottom: 0px;
+  top: 450px;
+}
+
+.buyer-collection {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  /* top: 0px; */
+  left: 800px;
+  bottom: 385px;
+}

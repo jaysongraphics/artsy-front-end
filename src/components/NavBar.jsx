@@ -15,7 +15,13 @@ function NavBar() {
           <button id="bhover"class="ui black button">Galleries</button>
           </Link>
           <Link to="/buyercollection">
-          <button id="bhover" class="ui black button">Buyer Collection</button>
+          <button id="bhover" class="ui black button">Buyer collection</button>
+          </Link>
+          <Link to="/login">
+          <button id="bhover" class="ui black button">Login</button>
+          </Link>
+          <Link to="/signup">
+          <button id="bhover" class="ui black button">Sign up</button>
           </Link>
           <SearchBar />
         </nav>         
