@@ -1,5 +1,5 @@
-import Logo from "./Logo"
-import NavBar from "./NavBar"
+// import Logo from "./Logo"
+// import NavBar from "./NavBar"
 
 function Header () {
 
@@ -7,8 +7,8 @@ function Header () {
     return(
         <div className="header">
             <header>
-                <Logo />
-                <NavBar />   
+                {/* <Logo />
+                <NavBar />    */}
             </header>
 
         </div>

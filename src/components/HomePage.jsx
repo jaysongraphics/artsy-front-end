@@ -2,7 +2,7 @@ import React from "react";
 import {useEffect, useState} from "react"
 import Gallery from "./Gallery";
 import SlideShow from "./SlideShow"
-import Painting from "./Painting"
+// import Painting from "./Painting"
 
 function HomePage() {
     const [paintings, setPaintings] = useState([])
@@ -44,7 +44,6 @@ function HomePage() {
           reviews={reviews}
           />
           <SlideShow paintings={paintings}/>
-          <Painting paintings={paintings}/>
 
           
           {/* <button onClick={handleClick}>

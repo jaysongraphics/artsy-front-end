@@ -2,15 +2,17 @@
 import {useEffect, useState} from "react"
 import logo from './logo.svg';
 import './App.css';
-import HomePage from "../component/HomePage";
-import Header from './Header'
+import HomePage from './components/HomePage'
+import NavBar from './components/NavBar'
+
 
 
 function App() {
     return(
       <div>
-        <Header />
-        <HomePage />  
+        <NavBar />
+        <HomePage />
+          
       </div>
     )
 }
