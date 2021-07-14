@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+#slideShow {
+  margin-left: 500px;
+} 
+
+#navVertical {
+  /* margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 50px; */
+  display: flex;
+  justify-content:100px;
+  align-items: center;
+  min-height: 10px;
+} 
+
+.nav_bar {
+
+
+}
+
+/* .nav_bar {
+  display: flex;
+  justify-content:100px;
+  align-items: center;
+  min-height: 150px;
+  background: rgb(214, 214, 214); 
+  color: white; 
+} */
+
+
+/* .AppNav {
+  display: flex;
+  justify-content:100px;
+
+}
+
+
+/* .nav_bar {
+  position: fixed;
+}   */

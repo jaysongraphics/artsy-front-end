@@ -1,11 +1,7 @@
 import React from "react";
 import Painting from "./Painting"
 
-
-
 function Gallery({paintings, galleries, reviews}) {
-  const {id, comment, gallery_id, buyer_id} = reviews
-  
   const galleryReview = reviews.map (review => <li> {review.comment} </li>)
   const galleryInfo = galleries.map (gallery => {
     return (
@@ -16,22 +12,17 @@ function Gallery({paintings, galleries, reviews}) {
         <p>Time: {gallery.time}</p>
         <p>Reviews: {galleryReview} </p>
       </div>)
-  
-  // const galleryReview = reviews.filter() 
-
   })  
   
   return (
     <div >
-      <div className="galleries">
-        {galleryInfo}
-       
-      </div>
-      
-
-      <Painting paintings={paintings}/>
-        
-      
+        <h1>Galleries</h1>
+        <div className="galleries">
+          {galleryInfo}
+        </div>
+        <Painting 
+        paintings={paintings}
+        />
     </div>
   );
 }

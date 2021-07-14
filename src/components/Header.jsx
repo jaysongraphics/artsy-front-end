@@ -1,18 +1,18 @@
-// import Logo from "./Logo"
-// import NavBar from "./NavBar"
+// // import Logo from "./Logo"
+// // import NavBar from "./NavBar"
 
-function Header () {
+// function Header () {
 
 
-    return(
-        <div className="header">
-            <header>
-                {/* <Logo />
-                <NavBar />    */}
-            </header>
+//     return(
+//         <div className="header">
+//             <header>
+//                 {/* <Logo />
+//                 <NavBar />    */}
+//             </header>
 
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
-export default Header
+// export default Header
