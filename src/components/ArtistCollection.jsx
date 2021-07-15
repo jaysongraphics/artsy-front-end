@@ -12,13 +12,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    // justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
   },
   imageList: {
-    width: 500,
-    height: 450,
+    width: 350,
+    height: 650,
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
@@ -40,8 +40,8 @@ function ArtistCollection({paintings, buyers}) {
   const classes = useStyles();
 
   return (
-    <div className="featured-paintings">
-      <div className={classes.root}>
+    <div id="feat-painting" className="featured-paintings">
+      <div id="inside-painting"className={classes.root}>
         <ImageList rowHeight={180} cols={1} className={classes.imageList}>
           <ImageListItem key="Subheader"  style={{ height: 'auto' }}>
             <ListSubheader component="div">Featured Paintings</ListSubheader>

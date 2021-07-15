@@ -36,8 +36,8 @@ function SignUp({userSignup}) {
               usernameSignup("")
               emailSignup("")
                }} 
-              className="" className="ui black button">Log In</button>
-              <button className="ui grey button">Sign Up</button>
+              className="" className="ui black button">Sign Up</button>
+              <button className="ui grey button">Log In</button>
             <div id="login-buttons" className="ui buttons">
             </div>
           </div>

@@ -46,14 +46,18 @@
   position: relative;
   /* top: 0px; */
   left: 300px;
-  bottom: 350px;
+  bottom: -50px;
 } 
 
 #navVertical {
   width: 210px;
   height: 350px;
-  position: relative;
+  /* position: relative; */
   top: 120px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
 } 
 
 .nav_bar {
@@ -63,9 +67,9 @@
 
 }
 .AppNav {
-  height: 350px;
+  height: 30px;
   position: relative;
-  top: 120px;
+  top: 50px;
 }
 
 .search-bar{
@@ -80,7 +84,7 @@
   position: relative;
   /* top: 0px; */
   left: 300px;
-  bottom: 350px;
+  bottom: -100px;
 }
 
 #bhover{
@@ -160,17 +164,20 @@
 }
 
 .login-div {
+  position: relative;
+  top: 180px;
   margin-left: 50px;
-  padding-left: 0px;
-  margin-right: 400px;
-  margin-top: 150px
+  padding-left: 100px;
+  margin-right: 700px;
 }
 
 .signup-div{
-  margin-left: 150px;
+  position: relative;
+  left: 120px;
+  top: 180px;
+  margin-left: 250px;
   padding-left: 100px;
-  margin-right: 400px;
-  margin-top: -200px
+  margin-right: 500px;
 }
 
 .gallery_img {
@@ -178,4 +185,42 @@
   height: 300px;
 }
 
+#feat-painting{
+  /* margin-left: 0px;
+  padding-left: 1200px;
+  margin-right: 0px;
+  margin-top: 150px */
+  position: relative;
+  top: -500px;
+}
 
+#inside-painting{
+  position: relative;
+  top: 600px;
+  right: -1150px;
+}
+
+#feature-gallery-div{
+  margin-left: -1600px;
+  padding: 0px 0;
+  display: inline-flex;
+  position: relative;
+  top: -700px;}
+
+
+#insidediv{
+  position: relative;
+  top: 180px;
+  right: -1600px;
+}
+
+.footer{
+  margin-top: 2rem;
+  padding: 30px;
+  background-color: rgb(235, 195, 64);
+  position: fixed;
+  bottom: 0px;
+  top: 2000px;
+  left: 0;
+  width: 100%;
+}

@@ -11,7 +11,7 @@ import 'semantic-ui-css/semantic.min.css'
 import searchBar from './components/SearchBar'
 import LogIn from './components/LogIn'
 import SignUp from './components/SignUp'
-
+import Footer from "./components/Footer";
 
 function App() {
   const [paintings, setPaintings] = useState([])
@@ -109,6 +109,7 @@ function userSignup(username, email){
               <Route path="/signup"  component={() => <SignUp userLogin={userSignup}/>}/>
               </Switch>
           </div>
+          <Footer />
       </Router>
     )
 }

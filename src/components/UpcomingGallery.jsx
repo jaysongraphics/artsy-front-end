@@ -12,13 +12,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    // justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
   },
   imageList: {
     width: 500,
-    height: 450,
+    height: 640,
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
@@ -53,9 +53,9 @@ function UpcomingGallery({galleries}) {
   
 
   return (
-    <div className="featured-galleries">
+    <div id="feature-gallery-div"className="featured-galleries">
       {/* <h1 className="">Featured Galleries</h1> */}
-      <div className={classes.root}>
+      <div id="insidediv" className={classes.root}>
         <ImageList rowHeight={300} cols={1} className={classes.imageList}>
           <ImageListItem key="Subheader" style={{ height: 'auto' }}>
             <ListSubheader component="div">Featured Galleries</ListSubheader>
