@@ -8,16 +8,26 @@ function Gallery({paintings, galleries, reviews}) {
   //   setRandom(getRandomReviews(reviews))
   // },[reviews])
   
-  console.log(reviews)
-  const galleryReview = reviews.map (review => <li> {review.comment} </li>)
+  // console.log(reviews)
+  
+  // {galleryReview.slice(1,5)}
+  
   const galleryInfo = galleries.map (gallery => {
+
+    const reviewArray = reviews.filter(review => review.id == gallery.id)
+    console.log(reviewArray)
+    const galleryReview = reviewArray.map (review => <li> {review.comment} </li>)
+
     return (
-      <div>
-        <h2>Gallery Name: {gallery.gallery_name}</h2>
+      <div className="gallery_info">
+        <h2 className="gallery_name">{gallery.gallery_name}</h2>
+        <img className="gallery_img" src={gallery.image} />
         <p>Location: {gallery.location}</p>
         <p>Date: {gallery.date}</p>
-        <p>Time: {gallery.time}</p>
-        <p>Reviews: {galleryReview.slice(1,5)} </p>
+        <p>Opening hours: {gallery.hours}</p>
+        <p>{gallery.description}</p>
+        <p>Reviews: {galleryReview} </p>
+
       </div>)
   })  
   //  function getRandomReviews(reviews) {
@@ -38,7 +48,7 @@ function Gallery({paintings, galleries, reviews}) {
 
   return (
     <div className="gallery-div" >
-        <h1>Galleries</h1>
+        <h1 className="gallery_title">Galleries</h1>
         <div className="galleries">
           {galleryInfo}
         </div>

@@ -19,7 +19,7 @@ function SignUp({userSignup}) {
   
     return (
       <div className="signup-div">
-          <h1>Welcome back Buyer!</h1>
+          <h1>Join Artsy today!</h1>
           <div 
           className='ui form'>         
             <div>

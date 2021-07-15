@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 20%
 }
 
 .App-logo {
@@ -107,21 +108,21 @@
   bottom: 350px;
 }
 
-.artist-collection{
+.featured-paintings{
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
   position: relative;
   /* top: 0px; */
-  left: 400px;
+  right: 300px;
   bottom: 345px;
 }
 
-.upcoming-gallery{
+.featured-galleries{
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
   position: relative;
   /* top: 0px; */
-  left: 800px;
+  left: 300px;
   bottom: 385px;
 }
 
@@ -171,3 +172,10 @@
   margin-right: 400px;
   margin-top: -200px
 }
+
+.gallery_img {
+  width: 500px;
+  height: 300px;
+}
+
+

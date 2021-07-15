@@ -17,6 +17,13 @@ function App() {
   const [paintings, setPaintings] = useState([])
   const [galleries, setGalleries] = useState([])
   const [reviews, setReviews] = useState([])
+  const [buyers, setBuyer] = useState([])
+
+  useEffect(() =>{
+    fetch('http://localhost:9393/buyer')
+    .then(res => res.json())
+    .then(buyerArray => setBuyer(buyerArray))
+  }, []);
 
   useEffect(() =>{
     fetch('http://localhost:9393/painting')
@@ -73,7 +80,7 @@ function userSignup(username, email){
             <NavBar />
           <Switch >  
               <Route path="/" exact component={() => <HomePage paintings={paintings} 
-              galleries={galleries}/>} 
+              galleries={galleries} buyers={buyers}/>} 
               />
               <Route path="/gallery" component={() => <Gallery paintings={paintings} 
               galleries={galleries}

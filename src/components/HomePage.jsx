@@ -6,7 +6,7 @@ import SlideShow from "./SlideShow"
 import ArtistCollection from './ArtistCollection'
 import UpcomingGallery from './UpcomingGallery'
 
-function HomePage({paintings, galleries}) {
+function HomePage({paintings, galleries, buyers}) {
   // const [paintings, setPaintings] = useState([])
   // const [galleries, setGalleries] = useState([])
   // const [reviews, setReviews] = useState([])
@@ -44,14 +44,15 @@ function HomePage({paintings, galleries}) {
           <h1 className="home1">Home</h1>
           <SlideShow 
           paintings={paintings}
+        
           />
             {/* <Gallery 
               paintings={paintings}
               galleries={galleries}
               reviews={reviews}
             /> */}
-          <ArtistCollection />
-          <UpcomingGallery />
+          <ArtistCollection paintings={paintings} buyers={buyers}/>
+          <UpcomingGallery galleries={galleries}/>
           {/* <button onClick={handleClick}>
                 Click here for data
           </button>   */}
