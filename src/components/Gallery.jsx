@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from "react";
 import Painting from "./Painting"
+import GalleryChild from "./GalleryChild"
 
-function Gallery({paintings, galleries, reviews}) {
+//add review form to each individual gallery
+
+function Gallery({paintings, galleries, reviews, addReview}) {
   // const [random, setRandom] = useState([])
 
   // useEffect(() =>{
@@ -14,21 +17,23 @@ function Gallery({paintings, galleries, reviews}) {
   
   const galleryInfo = galleries.map (gallery => {
 
-    const reviewArray = reviews.filter(review => review.id == gallery.id)
+    const reviewArray = reviews.filter(review => review.gallery_id == gallery.id)
     console.log(reviewArray)
     const galleryReview = reviewArray.map (review => <li> {review.comment} </li>)
 
     return (
-      <div className="gallery_info">
-        <h2 className="gallery_name">{gallery.gallery_name}</h2>
-        <img className="gallery_img" src={gallery.image} />
-        <p>Location: {gallery.location}</p>
-        <p>Date: {gallery.date}</p>
-        <p>Opening hours: {gallery.hours}</p>
-        <p>{gallery.description}</p>
-        <p>Reviews: {galleryReview} </p>
+      <GalleryChild key={gallery.id} gallery={gallery} galleryReview={galleryReview} addReview={addReview}/>
+      // <div className="gallery_info">
+      //   <h2 className="gallery_name">{gallery.gallery_name}</h2>
+      //   <img className="gallery_img" src={gallery.image} />
+      //   <p>Location: {gallery.location}</p>
+      //   <p>Date: {gallery.date}</p>
+      //   <p>Opening hours: {gallery.hours}</p>
+      //   <p>{gallery.description}</p>
+      //   <p>Reviews: {galleryReview} </p>
 
-      </div>)
+      // </div>)
+    )
   })  
   //  function getRandomReviews(reviews) {
   //   const numberOfReviews= Math.floor(Math.random() * 6) 

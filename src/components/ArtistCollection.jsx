@@ -52,11 +52,11 @@ function ArtistCollection({paintings, buyers}) {
               <ImageListItemBar
                 title={painting.painting_name}
                 subtitle={<span>by: {painting.artist_name}</span>}
-                // actionIcon={
-                //   <IconButton aria-label={`info about ${painting.name}`} className={classes.icon}>
-                //     <InfoIcon />
-                //   </IconButton>
-                // }
+                actionIcon={
+                  <IconButton aria-label={`info about ${painting.name}`} className={classes.icon}>
+                    <InfoIcon />
+                  </IconButton>
+                }
               />
             </ImageListItem>
           ))}

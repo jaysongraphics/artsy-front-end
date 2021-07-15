@@ -66,11 +66,11 @@ function UpcomingGallery({galleries}) {
               <ImageListItemBar
                 title={gallery.gallery_name} 
                 subtitle={<span>End Date: {gallery.date}</span>}
-                // actionIcon={
-                //   <IconButton aria-label={`info about ${gallery.gallery_name}`} className={classes.icon}>
-                //     <InfoIcon />
-                //   </IconButton>
-                // }
+                actionIcon={
+                  <IconButton aria-label={`info about ${gallery.gallery_name}`} className={classes.icon}>
+                    <InfoIcon />
+                  </IconButton>
+                }
               />
             </ImageListItem>
           ))}

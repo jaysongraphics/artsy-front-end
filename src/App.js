@@ -18,6 +18,7 @@ function App() {
   const [galleries, setGalleries] = useState([])
   const [reviews, setReviews] = useState([])
   const [buyers, setBuyer] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(() =>{
     fetch('http://localhost:9393/buyer')
@@ -70,6 +71,21 @@ function userSignup(username, email){
     .then((data) => {console.log(data)})
   }
 
+  function addReview(newReview) {
+    let reviewArray = [...reviews, newReview]
+    setReviews(reviewArray)
+  }
+
+  const filteredArtist = paintings.filter(painting => {
+    return (painting.artist_name.toLowerCase().includes(searchTerm.toLowerCase()))
+  })
+
+  console.log(filteredArtist)
+
+  // const filterPaintings
+
+  // const filterGallery 
+
 
 // console.log(userLogin)
 // console.log(reviews)
@@ -77,7 +93,7 @@ function userSignup(username, email){
     return(
     <Router> 
           <div className="AppNav">
-            <NavBar />
+            <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <Switch >  
               <Route path="/" exact component={() => <HomePage paintings={paintings} 
               galleries={galleries} buyers={buyers}/>} 
@@ -85,6 +101,7 @@ function userSignup(username, email){
               <Route path="/gallery" component={() => <Gallery paintings={paintings} 
               galleries={galleries}
               reviews={reviews}
+              addReview={addReview}
               />} 
               />
               <Route path="/buyercollection" component={BuyerCollection} />

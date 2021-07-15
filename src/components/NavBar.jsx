@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 import SearchBar from "./SearchBar"
 // import Gallery from "./";
 
-function NavBar() {
+function NavBar({searchTerm, setSearchTerm}) {
   return (
     <div id='navVertical' className="ui inverted vertical pointing menu" >
         <nav className="nav_bar" className=''>
@@ -23,7 +23,7 @@ function NavBar() {
           <Link to="/signup">
           <button id="bhover" class="ui black button">Sign up</button>
           </Link>
-          <SearchBar />
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         </nav>         
     </div>
   );

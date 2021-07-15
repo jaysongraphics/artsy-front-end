@@ -2,15 +2,15 @@ import React from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import Input from '@material-ui/core/Input';
 
+// search by artist, gallery name, painting name
 
 
-
-function SearchBar () {
+function SearchBar ({searchTerm, setSearchTerm}) {
     return(
      <div className="search-bar">
         <div class="ui inverted divider"></div>
         <div class="ui inverted left icon input">
-          <input type="text" placeholder="Search..."/>
+          <input type="text" placeholder="Search..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
           <i class="search icon"></i>
         </div>
     </div>
