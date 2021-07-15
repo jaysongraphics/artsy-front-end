@@ -41,7 +41,7 @@ function HomePage({paintings, galleries, buyers}) {
   
       return(
         <div className="middle">
-          <h1 className="home1">Home</h1>
+          {/* <h1 className="home1">Home</h1> */}
           <SlideShow 
           paintings={paintings}
         

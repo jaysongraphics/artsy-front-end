@@ -12,6 +12,8 @@ import searchBar from './components/SearchBar'
 import LogIn from './components/LogIn'
 import SignUp from './components/SignUp'
 import Footer from "./components/Footer";
+import Header from "./components/Header.jsx"
+import FeaturedArtist from "./components/FeaturedArtist"
 
 function App() {
   const [paintings, setPaintings] = useState([])
@@ -92,6 +94,7 @@ function userSignup(username, email){
 
     return(
     <Router> 
+      <Header />
           <div className="AppNav">
             <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <Switch >  
@@ -109,6 +112,7 @@ function userSignup(username, email){
               <Route path="/signup"  component={() => <SignUp userLogin={userSignup}/>}/>
               </Switch>
           </div>
+          <FeaturedArtist />
           <Footer />
       </Router>
     )

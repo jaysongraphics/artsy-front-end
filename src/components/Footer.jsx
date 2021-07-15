@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <div className="footer">
-    <p>This is a footer</p>
+    <h3>This is a footer</h3>
   </div>
   );
 }

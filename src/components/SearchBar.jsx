@@ -8,8 +8,8 @@ import Input from '@material-ui/core/Input';
 function SearchBar ({searchTerm, setSearchTerm}) {
     return(
      <div className="search-bar">
-        <div class="ui inverted divider"></div>
-        <div class="ui inverted left icon input">
+  <div class="ui inverted divider"></div>
+  <div class="ui inverted transparent icon input">
           <input type="text" placeholder="Search..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
           <i class="search icon"></i>
         </div>
