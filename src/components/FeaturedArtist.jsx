@@ -1,5 +1,6 @@
 import React from "react";
 import Image from '../images/Michelangelo_Daniele_da_Volterra_(dettaglio).jpg'
+import HomePage from "./HomePage";
 
 function FeaturedArtist() {
 

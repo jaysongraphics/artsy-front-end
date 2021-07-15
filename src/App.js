@@ -93,8 +93,9 @@ function userSignup(username, email){
 // console.log(reviews)
 
     return(
-    <Router> 
+      <div >
       <Header />
+    <Router> 
           <div className="AppNav">
             <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <Switch >  
@@ -112,9 +113,9 @@ function userSignup(username, email){
               <Route path="/signup"  component={() => <SignUp userLogin={userSignup}/>}/>
               </Switch>
           </div>
-          <FeaturedArtist />
           <Footer />
       </Router>
+      </div>
     )
 }
 

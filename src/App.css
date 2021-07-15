@@ -234,15 +234,24 @@ background:rgb(255,187,54);
   width: 100%;
 } */
 
-.footer{
+/* .footer{
 display: flex;
 justify-content: space-around;
 align-items: center;
 min-height: 10vh;
 background:rgb(0, 0, 0);
 position: relative;
-/* top: 300px; */
 bottom: -1800px;
+} */
+
+.footer{
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:80px;
+  width:100%;
+  background:rgb(0, 0, 0);
+  /* display: flex; */
 }
 
 h3{
@@ -254,6 +263,9 @@ h3{
   font-size: 50px;
   font-family: fantasy;
 }
+/* .logo-img{
+} */
+
 
 /* .imglogo{
   position: flex;
@@ -265,8 +277,8 @@ h3{
   font-size: 50px;
   position: relative;
   left: 300px;
-  margin-right: 625px;
-  top: 1300px;
+  margin-right: 450px;
+  top: -500px;
 }
 
 p {
