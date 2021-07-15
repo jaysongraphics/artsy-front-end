@@ -2,13 +2,14 @@ import React, {useState, useEffect} from "react";
 import Painting from "./Painting"
 
 function Gallery({paintings, galleries, reviews}) {
-  const [random, setRandom] = useState([])
+  // const [random, setRandom] = useState([])
 
-  useEffect(() =>{
-    setRandom(getRandomReviews(reviews))
-  },[reviews])
+  // useEffect(() =>{
+  //   setRandom(getRandomReviews(reviews))
+  // },[reviews])
   
-  const galleryReview = random.map (review => <li> {review.comment} </li>)
+  console.log(reviews)
+  const galleryReview = reviews.map (review => <li> {review.comment} </li>)
   const galleryInfo = galleries.map (gallery => {
     return (
       <div>
@@ -16,23 +17,23 @@ function Gallery({paintings, galleries, reviews}) {
         <p>Location: {gallery.location}</p>
         <p>Date: {gallery.date}</p>
         <p>Time: {gallery.time}</p>
-        <p>Reviews: {galleryReview} </p>
+        <p>Reviews: {galleryReview.slice(1,5)} </p>
       </div>)
   })  
-   function getRandomReviews(reviews) {
-    const numberOfReviews= Math.floor(Math.random() * 6) 
-    const selectedReviews = []
+  //  function getRandomReviews(reviews) {
+  //   const numberOfReviews= Math.floor(Math.random() * 6) 
+  //   const selectedReviews = []
     
-    while (selectedReviews.length < numberOfReviews) {
-      let index = Math.floor(Math.random() * reviews.length)
-      if (!selectedReviews.includes(reviews[index])){
-        selectedReviews.push(reviews[index])
-      
-      } 
-    }
-    return selectedReviews
+  //   while (selectedReviews.length < numberOfReviews) {
+  //     let index = Math.floor(Math.random() * reviews.length)
+  //     if (!selectedReviews.includes(reviews[index])){
+  //       selectedReviews.push(reviews[index])
+  //     } 
+  //   }
+
+  //   return selectedReviews
   
-   }
+  //  }
 
 
   return (

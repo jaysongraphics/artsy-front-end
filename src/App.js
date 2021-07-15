@@ -8,7 +8,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Gallery from './components/Gallery'
 import BuyerCollection from './components/BuyerCollection'
 import 'semantic-ui-css/semantic.min.css'
-// import 'semantic-ui-css/semantic.js'
 import searchBar from './components/SearchBar'
 import LogIn from './components/LogIn'
 import SignUp from './components/SignUp'
@@ -33,12 +32,40 @@ function App() {
   }, []);
 
   useEffect(() =>{
-    fetch('http://localhost:9393/reviews')
+    fetch('http://localhost:9393/review')
     .then(res => res.json())
     .then(reviewArray => setReviews(reviewArray))
   }, []);
 
-  console.log(reviews)
+function userLogin(username, email){
+fetch('http://localhost:9393/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    Username: username,
+    Email: email
+  }),
+})
+  .then((res) => res.json())
+  .then((data) => {console.log(data)})
+}
+
+function userSignup(username, email){
+  fetch('http://localhost:9393/signup', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      Username: username,
+      Email: email
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {console.log(data)})
+  }
+
+
+// console.log(userLogin)
+// console.log(reviews)
 
     return(
     <Router> 
@@ -54,8 +81,8 @@ function App() {
               />} 
               />
               <Route path="/buyercollection" component={BuyerCollection} />
-              <Route path="/login"  component={LogIn}/>
-              <Route path="/signup"  component={SignUp}/>
+              <Route path="/login"  component={() => <LogIn userLogin={userLogin}/>}/>
+              <Route path="/signup"  component={() => <SignUp userLogin={userSignup}/>}/>
               </Switch>
           </div>
       </Router>

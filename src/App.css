@@ -158,8 +158,16 @@
   bottom: 385px;
 }
 
-.login_div {
-    margin-left: 450px;
-    margin-right: 450px;
-    margin-top: 400px
+.login-div {
+  margin-left: 50px;
+  padding-left: 0px;
+  margin-right: 400px;
+  margin-top: 150px
+}
+
+.signup-div{
+  margin-left: 150px;
+  padding-left: 100px;
+  margin-right: 400px;
+  margin-top: -200px
 }

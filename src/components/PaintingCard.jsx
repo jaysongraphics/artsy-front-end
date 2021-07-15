@@ -1,5 +1,5 @@
 function PaintingsCard ({painting}) {
-    const {id, image, painting_name, artist_name, country, birthday, price } = painting
+    const {image, painting_name, artist_name, country, birthday, price } = painting
     
     return (
         <div className="paintings_card">

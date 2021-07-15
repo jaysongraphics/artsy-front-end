@@ -1,33 +1,49 @@
 import React from "react";
 import Painting from "./Painting"
+import {useEffect, useState} from "react"
 
 
+function LogIn({userLogin}) {
+  const [username, setUserName] =useState("")
+  const [email, setEmail] =useState ("")
 
-function LogIn() {
+  function handleUsername(e){
+      setUserName(e.target.value)
+  }  
+
+  function handleEmail(e){
+    setEmail(e.target.value)
+}  
+
+console.log(email);
+console.log(username);
+
 
   return (
+
     <div className="login-div">
         <h1>Welcome back Buyer!</h1>
-        <form 
+        <div 
         className='ui form'>         
           <div>
             <input type="text" name="username" placeholder="Username" 
-            //onChange={(e) => setdetails(e.target.value)} value={details}
-            />
-            <label htmlFor="username">Username</label>
+            onChange={handleUsername} value={username}/> 
+             <label htmlFor="username">Username</label>
           </div>
           <div>
-            <input type="password" name="password" placeholder="Password" />
-            <label htmlFor="password">Password</label>
+            <input type="text" name="password" placeholder="Email"  
+            onChange={handleEmail} value={email}/>
+            <label htmlFor="password">Email</label>
           </div>      
-          <div id="login-buttons" className="ui buttons">
-            <button className="ui black button">Log In</button>
-            <div className="or"></div>
+            <button onClick={() =>{userLogin(username, email)
+            setUserName("")
+            setEmail("")
+             }} 
+            className="" className="ui black button">Log In</button>
             <button className="ui grey button">Sign Up</button>
+          <div id="login-buttons" className="ui buttons">
           </div>
-          {/* <input className='ui primary button' type="submit" value="Login"/> */}
-        </form>
- 
+        </div>
 </div>
 )}
 

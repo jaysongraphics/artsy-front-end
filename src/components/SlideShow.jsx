@@ -8,7 +8,6 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import img1 from '../images/eric-park-QbX8A8eHfzw-unsplash.jpg'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
