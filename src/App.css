@@ -351,11 +351,11 @@ background:rgb(255,187,54);
    background-color:rgb(27,28,29);
   }
   
-
+/* 
   .buyer_title{
     color:white;
     font-size: 40px;
-  }
+  } */
 
   .field{
     height: 70px;
@@ -372,8 +372,10 @@ font-size: 12px;
 
 .paintings_card{
   margin-left: 300px;
-  margin-top: 300px;
+  margin-top: 150px;
+  
 }
+
 .imgcard{
   width: 350px;
   height: 250px;
@@ -383,10 +385,33 @@ font-size: 12px;
 
 .title-paint{
 color: black;
-margin-left: 200px;
+margin-left: 0px;
 }
 
 .detail-info{
   color: black;
-  margin-left: 0px;
+  margin-left: 10px;
+}
+
+.art-info{
+color: rgb(255,187,54);
+margin-left: 400px;
+font-size: 40px;
+}
+
+.buyer_title{
+  color: rgb(255,187,54);
+  /* margin-left: 400px;
+  margin-top: 500px; */
+}
+
+.paint-sold{
+  margin-left: 450px;
+  color: rgb(255,187,54);
+  font-size: 40px;
+}
+
+#paint-sold{
+  margin-left: 500px;
+  margin-top: 50px;
 }

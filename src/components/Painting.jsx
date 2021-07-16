@@ -2,6 +2,8 @@ import React from "react";
 import {useState, useEffect} from "react"
 import PaintingsCard from "./PaintingCard";
 import {useParams} from "react-router-dom"
+import soldout from '../images/soldout.png'
+
 
 function Painting({paintings}) {
   let { id } = useParams();
@@ -16,8 +18,12 @@ function Painting({paintings}) {
     })
 
     if(onePainting.length == 0){
-      return <h1>Painting has been sold!</h1>
-    }
+      return <>
+      <h1 className="paint-sold">This Painting has been sold!</h1>
+    
+        <img id="paint-sold" src={soldout} width='400px' height=' 400px' />
+          </>
+   }
       
     
   return (

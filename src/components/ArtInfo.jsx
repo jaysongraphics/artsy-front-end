@@ -14,8 +14,8 @@ function ArtInfo({paintings}) {
 
       
   return (
-    <div className="art-info">
-         <h1>Art info</h1>
+    <div >
+         <h1 className="art-info">Art info</h1>
          {paintingsDisplay}
     </div>
   );
