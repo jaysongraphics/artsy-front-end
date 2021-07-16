@@ -369,3 +369,24 @@ background:rgb(255,187,54);
   #buttondelete{
 font-size: 12px;  
 }
+
+.paintings_card{
+  margin-left: 300px;
+  margin-top: 100px;
+}
+.imgcard{
+  width: 350px;
+  height: 250px;
+  /* margin-left: 300px;
+  margin-top: 300px; */
+}
+
+.title-paint{
+color: black;
+margin-left: 0px;
+}
+
+.detail-info{
+  color: black;
+  margin-left: 0px;
+}

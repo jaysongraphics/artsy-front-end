@@ -130,8 +130,9 @@ function userSignup(name, email){
               buyers={buyers}
               />} 
               />
-              <Route path="/buyercollection" component={() => <BuyerCollection />} />
-              <Route path="/buyercollection/paintings/:id" component={() => <Painting />} />
+              <Route exact path="/buyercollection" component={() => <BuyerCollection />} />
+              <Route exact path="/buyercollection/paintings/:id" component={() => <Painting paintings={paintings}  /> 
+              }/>
               <Route path="/login"  component={() => <LogIn userLogin={userLogin} buyers={buyers} history={history}/>}/>
               <Route path="/signup"  component={() => <SignUp userSignup={userSignup}/>}/>
               <Route path="/search-results" component={() => <SearchResults filteredArtist={filteredArtist} filteredGalleries={filteredGalleries} filteredPaintings={filteredPaintings} />} />
