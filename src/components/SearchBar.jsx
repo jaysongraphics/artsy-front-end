@@ -1,11 +1,30 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import Input from '@material-ui/core/Input';
+import {useState} from 'react'
 
 // search by artist, gallery name, painting name
 
 
 function SearchBar ({searchTerm, setSearchTerm}) {
+  // const [artistSearch, setArtistSearch] = useState(false)
+  // const [paintingSearch, setPaintingsSearch] = useState(false)
+  // const [gallerySearch, setGallerySearch] = useState (false)
+
+  
+  // function handleArtistSearch () {
+  //     setArtistSearch(!artistSearch)
+  // }
+
+  // function handlePaintingSearch () {
+  //     setPaintingsSearch(!paintingSearch)
+  // }
+
+  // function handleGallerySearch () {
+  //     setGallerySearch(!gallerySearch)
+  // }
+
+
     return(
      <div className="search-bar">
   <div class="ui inverted divider"></div>

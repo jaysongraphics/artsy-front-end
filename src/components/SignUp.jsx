@@ -15,6 +15,12 @@ function SignUp({userSignup}) {
 
   console.log(usernameSignup);
   console.log(emailSignup);
+
+  const handleSignup = () => {
+    userSignup(usernameSignup, emailSignup)
+    setUsernameSignup("")
+    setEmailSignup("")
+  }
   
   
     return (
@@ -32,12 +38,9 @@ function SignUp({userSignup}) {
               onChange={handleSignUpEmail} value={emailSignup}/>
               <label htmlFor="password">Email</label>
             </div>      
-              <button onClick={() =>{userSignup(usernameSignup, emailSignup)
-              usernameSignup("")
-              emailSignup("")
-               }} 
-              className="" className="ui black button">Sign Up</button>
-              <button className="ui grey button">Log In</button>
+              <button onClick={handleSignup} 
+              className="" className="ui black button">Log In</button>
+              <button className="ui grey button">Sign Up</button>
             <div id="login-buttons" className="ui buttons">
             </div>
           </div>

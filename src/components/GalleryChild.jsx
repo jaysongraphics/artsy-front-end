@@ -1,21 +1,32 @@
 import React, {useState} from "react"
 
-function GalleryChild ({gallery, galleryReview, addReview}) {
+function GalleryChild ({reviews, gallery, galleryReview, addReview, buyers}) {
 
     const [comment, setComment] = useState ("")
+    
 
     function handleSubmit (e) {
         e.preventDefault();
+
+        let blah = buyers.find(buyer => {
+            return (
+                reviews.filter(review => review.buyer_id == buyer.id))
+        })
+        console.log(blah.id)
 
         fetch("http://localhost:9393/review", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
+            //   buyer_id: should come from logged in user
+              buyer_id: blah.id,
+              gallery_id: gallery.id,
               comment: comment
             }),
           })
             .then((res) => res.json())
-            .then((newComment) => console.log(newComment))
+            .then((newComment) => addReview(newComment))
+        //     .then(console.log())
           }
 
     
