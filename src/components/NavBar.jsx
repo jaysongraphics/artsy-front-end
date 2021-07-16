@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 import SearchBar from "./SearchBar"
 import SearchResults from "./SearchResults"
 
-function NavBar({searchTerm, setSearchTerm}) {
+function NavBar({searchTerm, setSearchTerm, setBuyer, buyers}) {
   return (
     <div id='navVertical' className="ui inverted vertical pointing menu" >
         <nav className="nav_bar" className=''>
@@ -17,12 +17,16 @@ function NavBar({searchTerm, setSearchTerm}) {
           <Link to="/buyercollection">
           <button id="bhover" class="ui black button">Buyer collection</button>
           </Link>
-          <Link to="/login">
+          {!buyers ? <> <Link to="/login">
           <button id="bhover" class="ui black button">Login</button>
-          </Link>
+          </Link> 
           <Link to="/signup">
           <button id="bhover" class="ui black button">Sign up</button>
-          </Link>
+          </Link> </>
+          :
+          <button id="bhover" class="ui black button" onClick={() =>setBuyer()}>Logout</button> }
+
+
           <Link to="/search-restults">
           <button id="bhover" class="ui black button">Art Info</button>
           </Link>

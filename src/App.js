@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom"
 import './App.css';
 import HomePage from './components/HomePage'
 import NavBar from './components/NavBar'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Router, Route, Switch} from 'react-router-dom'
 import Gallery from './components/Gallery'
 import BuyerCollection from './components/BuyerCollection'
 import 'semantic-ui-css/semantic.min.css'
@@ -12,6 +12,7 @@ import SignUp from './components/SignUp'
 import Footer from "./components/Footer";
 import Header from "./components/Header.jsx"
 import SearchResults from './components/SearchResults'
+import Painting from "./components/Painting"
 
 function App() {
   let history = useHistory()
@@ -19,8 +20,9 @@ function App() {
   const [paintings, setPaintings] = useState([])
   const [galleries, setGalleries] = useState([])
   const [reviews, setReviews] = useState([])
-  const [buyers, setBuyer] = useState([])
+  const [buyers, setBuyer] = useState()
   const [searchTerm, setSearchTerm] = useState("")
+  const [buyerGallery, setBuyerGallery] =useState([])
 
   useEffect(() =>{
     fetch('http://localhost:9393/buyer')
@@ -48,17 +50,20 @@ function App() {
   }, []);
 
 function userLogin(name, email){
+
 fetch('http://localhost:9393/login', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
-    Username: name,
-    Email: email
+    username: name,
+    email: email
   }),
 })
   .then((res) => res.json())
-  // .then((data) => {console.log(data)})
-  history.push("/buyercollection")
+  .then((data) => {setBuyer(data)
+   history.replace('/buyercollection')
+  })
+  
 }
 
 function userSignup(name, email){
@@ -73,18 +78,19 @@ function userSignup(name, email){
   })
     .then((res) => res.json())
     .then((newUser) => {
-      addUser(newUser)
+      setBuyer(newUser)
+      history.push("/")
       
       // set state with user 
-      // use hitory.push("/buyercollection")
+      
     })
   }
 
 
-  function addUser (newUser) {
-    let buyersArray = [...buyers, newUser]
-    setBuyer(buyersArray)
-  }
+  // function addUser (newUser) {
+  //   let buyersArray = [...buyers, newUser]
+  //   setBuyer(buyersArray)
+  // }
 
   function addReview(newReview) {
     let reviewArray = [...reviews, newReview]
@@ -103,12 +109,16 @@ function userSignup(name, email){
     return (gallery.gallery_name.toLowerCase().includes(searchTerm.toLowerCase()))
   })
 
+  console.log(filteredGalleries)
+  console.log(filteredArtist)
+  // console.log(filteredPaintings)
+
     return(
       <div >
       <Header />
-    <Router> 
+ 
           <div className="AppNav">
-            <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+            <NavBar  buyers={buyers} setBuyer={setBuyer} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <Switch >  
               <Route path="/" exact component={() => <HomePage paintings={paintings} 
               galleries={galleries} buyers={buyers}/>} 
@@ -120,14 +130,15 @@ function userSignup(name, email){
               buyers={buyers}
               />} 
               />
-              <Route path="/buyercollection" component={BuyerCollection} />
-              <Route path="/login"  component={() => <LogIn userLogin={userLogin}/>}/>
+              <Route path="/buyercollection" component={() => <BuyerCollection />} />
+              <Route path="/buyercollection/paintings/:id" component={() => <Painting />} />
+              <Route path="/login"  component={() => <LogIn userLogin={userLogin} buyers={buyers} history={history}/>}/>
               <Route path="/signup"  component={() => <SignUp userSignup={userSignup}/>}/>
               <Route path="/search-results" component={() => <SearchResults filteredArtist={filteredArtist} filteredGalleries={filteredGalleries} filteredPaintings={filteredPaintings} />} />
               </Switch>
           </div>
           <Footer />
-      </Router>
+   
       </div>
     )
 }

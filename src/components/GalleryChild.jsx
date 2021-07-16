@@ -1,6 +1,7 @@
 import React, {useState} from "react"
+import {Link} from "react-router-dom"
 
-function GalleryChild ({reviews, gallery, galleryReview, addReview, buyers}) {
+function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers}) {
 
     const [comment, setComment] = useState ("")
     
@@ -38,7 +39,8 @@ function GalleryChild ({reviews, gallery, galleryReview, addReview, buyers}) {
         <div>
         <div className="gallery_info">
             <h2 className="gallery_name">{gallery.gallery_name}</h2>
-            <img className="gallery_img" src={gallery.image} />
+            <Link to={`/buyercollection/paintings/${id}`} >   <img className="gallery_img" src={gallery.image} />  
+            </Link>
             <p>Location: {gallery.location}</p>
             <p>Date: {gallery.date}</p>
             <p>Opening hours: {gallery.hours}</p>

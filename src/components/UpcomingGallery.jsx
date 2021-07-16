@@ -49,6 +49,10 @@ function UpcomingGallery({galleries}) {
   // })
 
   //add clickEvent for Galleries
+  function handleClick(e) {
+    console.log(e.target)
+
+  }
 
   
 
@@ -67,8 +71,8 @@ function UpcomingGallery({galleries}) {
                 title={gallery.gallery_name} 
                 subtitle={<span>End Date: {gallery.date}</span>}
                 actionIcon={
-                  <IconButton aria-label={`info about ${gallery.gallery_name}`} className={classes.icon}>
-                    <InfoIcon />
+                  <IconButton aria-label={`info about ${gallery.gallery_name}`} className={classes.icon} onClick={handleClick}>
+                    <a href={gallery.website}><InfoIcon /></a>
                   </IconButton>
                 }
               />

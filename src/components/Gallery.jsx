@@ -22,7 +22,7 @@ function Gallery({paintings, galleries, reviews, addReview, buyers}) {
 
     // <button id="buttondelete"class="ui button">❌</button>
     return (
-      <GalleryChild key={gallery.id} reviews={reviews} gallery={gallery} galleryReview={galleryReview} addReview={addReview} buyers={buyers}/>
+      <GalleryChild key={gallery.id} id={gallery.id} reviews={reviews} gallery={gallery} galleryReview={galleryReview} addReview={addReview} buyers={buyers}/>
       // <div className="gallery_info">
       //   <h2 className="gallery_name">{gallery.gallery_name}</h2>
       //   <img className="gallery_img" src={gallery.image} />

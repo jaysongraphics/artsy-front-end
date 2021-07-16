@@ -3,7 +3,7 @@ import Painting from "./Painting"
 import {useEffect, useState} from "react"
 
 
-function LogIn({userLogin}) {
+function LogIn({userLogin, buyers, history}) {
   const [username, setUserName] =useState("")
   const [email, setEmail] =useState ("")
 
@@ -17,6 +17,19 @@ function LogIn({userLogin}) {
 
 console.log(email);
 console.log(username);
+
+const handleLogin = (e) => {
+  e.preventDefault()
+  userLogin(username, email)
+  setUserName("")
+  setEmail("")
+}
+
+useEffect(() => {
+  if (buyers) {
+    history.push('/')
+  }
+})
 
 
   return (
@@ -35,10 +48,7 @@ console.log(username);
             onChange={handleEmail} value={email}/>
             <label htmlFor="password">Email</label>
           </div>      
-            <button onClick={() =>{userLogin(username, email)
-            setUserName("")
-            setEmail("")
-             }} 
+            <button onClick={handleLogin} 
             className="" className="ui black button">Log In</button>
             <button className="ui grey button">Sign Up</button>
           <div id="login-buttons" className="ui buttons">
