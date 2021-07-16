@@ -56,6 +56,12 @@ function Gallery({paintings, galleries, reviews, addReview, buyers}) {
         <div className="galleries">
           {galleryInfo}
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
         {/* <Painting 
         paintings={paintings}
         /> */}

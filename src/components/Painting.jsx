@@ -20,8 +20,6 @@ function Painting({paintings}) {
     }
       
     
-
-
   return (
     <div className="paintings">
       {paintingsDisplay}

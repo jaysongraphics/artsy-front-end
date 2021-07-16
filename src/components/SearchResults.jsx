@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import ArtistSearch from "./ArtistSearch"
+import ArtistSearch from "./ArtInfo"
 import PaintingSearch from "./PaintingSearch"
 import GallerySearch from "./GallerySearch.jsx"
 

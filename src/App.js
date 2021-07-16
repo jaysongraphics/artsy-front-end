@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header.jsx"
 import SearchResults from './components/SearchResults'
 import Painting from "./components/Painting"
+import ArtInfo from "./components/ArtInfo"
 
 function App() {
   let history = useHistory()
@@ -133,6 +134,10 @@ function userSignup(name, email){
               <Route exact path="/buyercollection" component={() => <BuyerCollection />} />
               <Route exact path="/buyercollection/paintings/:id" component={() => <Painting paintings={paintings}  /> 
               }/>
+
+              <Route exact path="/artinfo/:id" component={() => <ArtInfo paintings={paintings}  /> 
+              }/>
+
               <Route path="/login"  component={() => <LogIn userLogin={userLogin} buyers={buyers} history={history}/>}/>
               <Route path="/signup"  component={() => <SignUp userSignup={userSignup}/>}/>
               <Route path="/search-results" component={() => <SearchResults filteredArtist={filteredArtist} filteredGalleries={filteredGalleries} filteredPaintings={filteredPaintings} />} />
@@ -143,5 +148,6 @@ function userSignup(name, email){
       </div>
     )
 }
+
 
 export default App;

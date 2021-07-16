@@ -11,9 +11,9 @@ function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers})
 
         let blah = buyers.find(buyer => {
             return (
-                reviews.filter(review => review.buyer_id === buyer.id))
+                reviews.filter(review => review.buyer_id == buyer.id))
         })
-        console.log(blah.id)
+        // console.log(blah.id)
 
         fetch("http://localhost:9393/review", {
             method: 'POST',

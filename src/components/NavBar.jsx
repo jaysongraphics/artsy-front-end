@@ -27,9 +27,9 @@ function NavBar({searchTerm, setSearchTerm, setBuyer, buyers}) {
           <button id="bhover" class="ui black button" onClick={() =>setBuyer()}>Logout</button> }
 
 
-          <Link to="/search-restults">
+          {/* <Link to="/search-restults">
           <button id="bhover" class="ui black button">Art Info</button>
-          </Link>
+          </Link> */}
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         </nav>         
     </div>

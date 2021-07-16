@@ -6,7 +6,7 @@ import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,9 +53,11 @@ function ArtistCollection({paintings, buyers}) {
                 title={painting.painting_name}
                 subtitle={<span>by: {painting.artist_name}</span>}
                 actionIcon={
+               <Link to={`/artinfo/${painting.id}`} > 
                   <IconButton aria-label={`info about ${painting.name}`} className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
+                       <InfoIcon />
+                       </IconButton>
+                </Link>
                 }
               />
             </ImageListItem>
