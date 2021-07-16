@@ -2,7 +2,7 @@ import React from "react";
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 import SearchBar from "./SearchBar"
-// import Gallery from "./";
+import SearchResults from "./SearchResults"
 
 function NavBar({searchTerm, setSearchTerm}) {
   return (
@@ -23,11 +23,15 @@ function NavBar({searchTerm, setSearchTerm}) {
           <Link to="/signup">
           <button id="bhover" class="ui black button">Sign up</button>
           </Link>
+          <Link to="/search-restults">
+          <button id="bhover" class="ui black button">Art Info</button>
+          </Link>
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         </nav>         
     </div>
   );
 }
+
 
 export default NavBar
 

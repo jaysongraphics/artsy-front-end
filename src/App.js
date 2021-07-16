@@ -103,9 +103,6 @@ function userSignup(name, email){
     return (gallery.gallery_name.toLowerCase().includes(searchTerm.toLowerCase()))
   })
 
-
-
-
     return(
       <div >
       <Header />
@@ -116,7 +113,7 @@ function userSignup(name, email){
               <Route path="/" exact component={() => <HomePage paintings={paintings} 
               galleries={galleries} buyers={buyers}/>} 
               />
-              <Route path="/gallery" component={() => <Gallery paintings={paintings} 
+              <Route path="/gallery" component={() => <Gallery paintings={paintings}  
               galleries={galleries}
               reviews={reviews}
               addReview={addReview}

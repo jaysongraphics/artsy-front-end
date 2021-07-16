@@ -16,11 +16,11 @@ function Gallery({paintings, galleries, reviews, addReview, buyers}) {
   // {galleryReview.slice(1,5)}
   
   const galleryInfo = galleries.map (gallery => {
-
     const reviewArray = reviews.filter(review => review.gallery_id == gallery.id)
     // console.log(reviewArray)
-    const galleryReview = reviewArray.map (review => <li> {review.comment} </li>)
+    const galleryReview = reviewArray.map (review => <li> {review.comment}</li>)
 
+    // <button id="buttondelete"class="ui button">❌</button>
     return (
       <GalleryChild key={gallery.id} reviews={reviews} gallery={gallery} galleryReview={galleryReview} addReview={addReview} buyers={buyers}/>
       // <div className="gallery_info">
@@ -47,7 +47,6 @@ function Gallery({paintings, galleries, reviews, addReview, buyers}) {
   //   }
 
   //   return selectedReviews
-  
   //  }
 
 
