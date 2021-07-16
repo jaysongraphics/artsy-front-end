@@ -35,10 +35,10 @@ function GalleryChild ({gallery, galleryReview, addReview}) {
             <p>Reviews: {galleryReview} </p>
 
         </div>
-        <div className="form">
+        <div className="ui form">
             <form onSubmit={handleSubmit} className="reviews-form">
-                <input  type="text" value={comment} placeholder="Tell us what you think!" onChange={(e) => setComment(e.target.value)}/>
-                <button className="review-btn">Submit</button>
+                <input className='field' type="text" value={comment} placeholder="Tell us what you think!" onChange={(e) => setComment(e.target.value)}/>
+                <button className="ui yellow button">Submit</button>
             </form>
         </div>
         </div>

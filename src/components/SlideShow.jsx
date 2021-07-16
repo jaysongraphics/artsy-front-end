@@ -13,31 +13,31 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
   {
-    label: 'Gallery 1',
+    label: '',
     imgPath: 'https://images.unsplash.com/photo-1580195319388-1bea55742a42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
   },
   {
-    label: 'Gallery 2',
+    label: '',
     imgPath:
       'https://images.unsplash.com/photo-1566063506578-24fef8099f05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1489&q=80',
   },
   {
-    label: 'Gallery 3',
+    label: '',
     imgPath:
       'https://images.unsplash.com/photo-1578985824626-945a6f546304?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
   },
   {
-    label: 'Gallery 4',
+    label: '',
     imgPath:
       'https://images.unsplash.com/photo-1554907984-15263bfd63bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80',
   },
   {
-    label: 'Gallery 5',
+    label: '',
     imgPath:
       'https://images.unsplash.com/photo-1608371945786-d47d3cdd31da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
   },
   {
-    label: 'Gallery 6',
+    label: '',
     imgPath:
       'https://images.unsplash.com/photo-1603750003385-3342231a1ff1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
   },

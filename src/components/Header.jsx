@@ -1,12 +1,12 @@
 import React from 'react';
-import Image from '../images/eric-park-QbX8A8eHfzw-unsplash.jpg'
-import ImageImg from '../images/creative-design.png'
+import ImageImg from '../images/PikPng.com_graphic-designing-png_821269.png'
+import Image from '../images/creative-design.png'
 
 function Header(){
     return  (
         <div > 
        <div className='header-div'> 
-        <img id="logo-img" rc={Image} width='150px' height=' 150px' alt='logo'/>
+        <img id="logo-img" src={Image} width='150px' height=' 150px' alt='logo' />
              <h1 className='logoh1'>Artsy</h1>
       </div >
     </div>
