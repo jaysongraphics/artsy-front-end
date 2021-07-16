@@ -4,7 +4,7 @@ import GalleryChild from "./GalleryChild"
 
 //add review form to each individual gallery
 
-function Gallery({paintings, galleries, reviews, addReview, buyers}) {
+function Gallery({paintings, galleries, reviews, addReview, buyers, setLoggedInBuyer, loggedInBuyer}) {
 
   const galleryInfo = galleries.map (gallery => {
     const reviewArray = reviews.filter(review => review.gallery_id == gallery.id)
@@ -12,7 +12,17 @@ function Gallery({paintings, galleries, reviews, addReview, buyers}) {
     const galleryReview = reviewArray.map (review => <li> {review.comment}</li>)
 
     return (
-      <GalleryChild key={gallery.id} id={gallery.id} reviews={reviews} gallery={gallery} galleryReview={galleryReview} addReview={addReview} buyers={buyers}/>
+      <GalleryChild 
+      key={gallery.id} 
+      id={gallery.id} 
+      reviews={reviews} 
+      gallery={gallery} 
+      galleryReview={galleryReview} 
+      addReview={addReview} 
+      buyers={buyers}
+      setLoggedInBuyer={setLoggedInBuyer}
+      loggedInBuyer={loggedInBuyer}
+      />
     )
   })  
 

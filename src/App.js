@@ -23,9 +23,9 @@ function App() {
   const [galleries, setGalleries] = useState([])
   const [reviews, setReviews] = useState([])
   const [buyers, setBuyers] = useState([])
-  const [loggedInBuyer, setLoggedInBuyer] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
   const [buyerGallery, setBuyerGallery] =useState([])
+  const [loggedInBuyer, setLoggedInBuyer] = useState(false)
 
 
   useEffect(() =>{
@@ -127,7 +127,10 @@ function userSignup(name, email){
               <Route path="/" exact component={() => <HomePage paintings={paintings} 
               galleries={galleries}/>} 
               />
-              <Route path="/gallery" component={() => <Gallery paintings={paintings}  
+              <Route path="/gallery" component={() => <Gallery 
+              setLoggedInBuyer={setLoggedInBuyer} 
+              loggedInBuyer={loggedInBuyer} 
+              paintings={paintings}  
               galleries={galleries}
               reviews={reviews}
               addReview={addReview}
