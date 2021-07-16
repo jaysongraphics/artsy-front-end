@@ -401,8 +401,9 @@ font-size: 40px;
 
 .buyer_title{
   color: rgb(255,187,54);
-  /* margin-left: 400px;
-  margin-top: 500px; */
+  margin-left: 400px;
+  margin-top: 500px;
+  font-size: 40px;
 }
 
 .paint-sold{
@@ -412,6 +413,11 @@ font-size: 40px;
 }
 
 #paint-sold{
+  margin-left: 500px;
+  margin-top: 50px;
+}
+
+.collectionpaintings{
   margin-left: 500px;
   margin-top: 50px;
 }

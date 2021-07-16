@@ -1,8 +1,8 @@
 import React from "react";
-import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 import SearchBar from "./SearchBar"
 import SearchResults from "./SearchResults"
+import BuyerCollection from "./BuyerCollection"
 
 function NavBar({searchTerm, setSearchTerm, setBuyer, buyers}) {
   return (
@@ -14,9 +14,11 @@ function NavBar({searchTerm, setSearchTerm, setBuyer, buyers}) {
           <Link to="/gallery">
           <button id="bhover"class="ui black button">Galleries</button>
           </Link>
-          <Link to="/buyercollection">
+          {buyers ?
+          <Link to="/buyercollection"> 
           <button id="bhover" class="ui black button">Buyer collection</button>
-          </Link>
+          </Link> : null}
+
           {!buyers ? <> <Link to="/login">
           <button id="bhover" class="ui black button">Login</button>
           </Link> 
@@ -24,12 +26,14 @@ function NavBar({searchTerm, setSearchTerm, setBuyer, buyers}) {
           <button id="bhover" class="ui black button">Sign up</button>
           </Link> </>
           :
-          <button id="bhover" class="ui black button" onClick={() =>setBuyer()}>Logout</button> }
+          <button id="bhover" class="ui black button" onClick={() =>setBuyer()}>Logout</button> 
+          } 
 
+         
 
           {/* <Link to="/search-restults">
           <button id="bhover" class="ui black button">Art Info</button>
-          </Link> */}
+        </Link> */}
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         </nav>         
     </div>
@@ -38,14 +42,3 @@ function NavBar({searchTerm, setSearchTerm, setBuyer, buyers}) {
 
 
 export default NavBar
-
-
-{/* <NavLink to='/' className="nav_button">
-Home
-</NavLink>
-<NavLink to='/galleries' className="nav_button">
-Galleries
-</NavLink>
-<NavLink to='/Collection' className="nav_button">
-Collection
-</NavLink> */}

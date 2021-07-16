@@ -1,9 +1,9 @@
 import React from "react";
 
 
-function Footer() {
- 
 
+
+function Footer() {
   return (
     <div className="footer">
       <form> 

@@ -1,5 +1,5 @@
 import React from "react";
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import {Link} from "react-router-dom"
 
 function SignUp({userSignup}) {
@@ -13,8 +13,8 @@ function SignUp({userSignup}) {
       setEmailSignup(e.target.value)
   }  
 
-  console.log(usernameSignup);
-  console.log(emailSignup);
+  // console.log(usernameSignup);
+  // console.log(emailSignup);
 
   const handleSignup = () => {
     userSignup(usernameSignup, emailSignup)

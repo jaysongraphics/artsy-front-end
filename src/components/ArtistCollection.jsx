@@ -25,17 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 function ArtistCollection({paintings, buyers}) {
-
   const featuredPaintings = paintings.slice(3,9)
-
-  // const collection = featuredPaintings.map (painting => {
-  //   return (
-  //     <img src={painting.image} />
-  //   )
-  // })
 
   const classes = useStyles();
 
@@ -68,26 +59,6 @@ function ArtistCollection({paintings, buyers}) {
     
   );
 
-  // const collection = paintings.map (buyer => {
-  //   const artWork = buyers.filter(painting => buyer.id == painting.id)
-  //   console.log(artWork)
-  //   // artWork.map(painting =>{
-  //   //   return (
-  //   //     <div>
-  //   //       <img src={painting.image} />
-  //   //     </div>
-  //   //   )
-  //   // }) 
-  // })
-
-  // console.log(collection)
-
-  // return (
-  //   <div className="artist-collection">
-  //     <h1>ArtistCollection</h1>
-  //     {collection}
-  //   </div>
-// )
 }
 
 export default ArtistCollection;

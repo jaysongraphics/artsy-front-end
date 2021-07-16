@@ -8,38 +8,7 @@ import UpcomingGallery from './UpcomingGallery'
 import FeaturedArtist from './FeaturedArtist'
 
 function HomePage({paintings, galleries, buyers}) {
-  // const [paintings, setPaintings] = useState([])
-  // const [galleries, setGalleries] = useState([])
-  // const [reviews, setReviews] = useState([])
 
-  // useEffect(() =>{
-  //   fetch('http://localhost:9393/painting')
-  //   .then(res => res.json())
-  //   .then(paintingArray => setPaintings(paintingArray))
-  // }, []);
-  // console.log(paintings);
-
-  // useEffect(() =>{
-  //   fetch('http://localhost:9393/gallery')
-  //   .then(res => res.json())
-  //   .then(galleryArray => setGalleries(galleryArray))
-  // }, []);
-
-  // useEffect(() =>{
-  //   fetch('http://localhost:9393/reviews')
-  //   .then(res => res.json())
-  //   .then(reviewArray => setReviews(reviewArray))
-  // }, []);
-
-  // console.log(reviews)
-
-    // const handleClick = () => {
-    //   fetch('http://localhost:9393/painting')
-    //   .then(res => res.json())
-    //   .then(paintingArray => setPaintings(paintingArray))
-    // }
-    //   console.log(paintings);
-  
       return(
         <div className="middle">
           {/* <h1 className="home1">Home</h1> */}

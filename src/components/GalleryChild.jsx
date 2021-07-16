@@ -2,10 +2,8 @@ import React, {useState} from "react"
 import {Link} from "react-router-dom"
 
 function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers}) {
-
     const [comment, setComment] = useState ("")
     
-
     function handleSubmit (e) {
         e.preventDefault();
 
@@ -13,7 +11,7 @@ function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers})
             return (
                 reviews.filter(review => review.buyer_id == buyer.id))
         })
-        // console.log(blah.id)
+
 
         fetch("http://localhost:9393/review", {
             method: 'POST',
@@ -30,11 +28,8 @@ function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers})
         //     .then(console.log())
           }
 
-    
-
     // console.log(id)
     
-
     return (
         <div>
         <div className="gallery_info">

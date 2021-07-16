@@ -62,7 +62,7 @@ fetch('http://localhost:9393/login', {
 })
   .then((res) => res.json())
   .then((data) => {setBuyer(data)
-   history.replace('/buyercollection')
+   history.replace('/login')
   })
   
 }
@@ -80,7 +80,7 @@ function userSignup(name, email){
     .then((res) => res.json())
     .then((newUser) => {
       setBuyer(newUser)
-      history.push("/")
+      history.push("/signup")
       
       // set state with user 
       
@@ -131,15 +131,15 @@ function userSignup(name, email){
               buyers={buyers}
               />} 
               />
-              <Route exact path="/buyercollection" component={() => <BuyerCollection />} />
+              <Route exact path="/buyercollection" component={() => <BuyerCollection paintings={paintings}/>} />
               <Route exact path="/buyercollection/paintings/:id" component={() => <Painting paintings={paintings}  /> 
               }/>
 
               <Route exact path="/artinfo/:id" component={() => <ArtInfo paintings={paintings}  /> 
               }/>
 
-              <Route path="/login"  component={() => <LogIn userLogin={userLogin} buyers={buyers} history={history}/>}/>
-              <Route path="/signup"  component={() => <SignUp userSignup={userSignup}/>}/>
+              <Route path="/login"component={() => <LogIn userLogin={userLogin} buyers={buyers} history={history}/>}/>
+              <Route path="/signup"component={() => <SignUp userSignup={userSignup}/>}/>
               <Route path="/search-results" component={() => <SearchResults filteredArtist={filteredArtist} filteredGalleries={filteredGalleries} filteredPaintings={filteredPaintings} />} />
               </Switch>
           </div>

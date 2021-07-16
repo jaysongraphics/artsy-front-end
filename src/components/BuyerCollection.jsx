@@ -1,14 +1,50 @@
 import React from "react";
-import Painting from "./Painting"
+import {useParams} from "react-router-dom"
+import PaintingsCard from "./PaintingCard";
 
 
 
-function BuyerCollection() {
+function BuyerCollection({paintings}) {
+    let { id } = useParams();
+
+    // const onePainting = paintings.filter((painting) => painting.id == id);
+    // const paintingsDisplay = onePainting.map (painting => {
+    //     return <PaintingsCard key={painting.id} painting={painting}/>  
+    //   })
+
+    const paintingsDisp = paintings.map (painting => {
+      return (
+        <div className="collectionpaintings">
+          <img className = "imgcard"src={painting.image} />
+          <h3 className = "title-paint">Title: {painting.painting_name}</h3>
+          <h4 className = "detail-info">Artist name: {painting.artist_name}</h4>
+          <h4 className = "detail-info">Country of Birth: {painting.country}</h4>
+          <h4 className = "detail-info">Date of Birth: {painting.birthday}</h4>
+          <h4 className = "detail-info">Price: ${painting.price}</h4>
+        </div>
+      )
+    })
+
+//     const onePainting = paintings.filter((painting) => painting.id == id);
+//     const paintingscollection = onePainting.map (painting => {
+//       return <PaintingsCard key={painting.id} painting={painting}/>  
+// })
 
   return (
-    <div className="buyer-collection-div">
-      <h1 className="buyer_title">Please Sign in to see collections</h1>
+    <div >
+        <h1 className="buyer_title">Here is your Collection</h1>
+         {paintingsDisp}
+         <br></br>
+         <br></br>
+         <br></br>
+         <br></br>
+         <br></br>
+
     </div>
-)}
+  );
+}
+
 
 export default BuyerCollection;
+
+
