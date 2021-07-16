@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ArtistCollection({paintings, buyers}) {
+function ArtistCollection({paintings}) {
   const featuredPaintings = paintings.slice(3,9)
 
   const classes = useStyles();

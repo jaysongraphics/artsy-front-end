@@ -3,7 +3,7 @@ import {useEffect, useState} from "react"
 import {Link} from "react-router-dom"
 
 
-function LogIn({userLogin, buyers, history}) {
+function LogIn({userLogin, loggedInBuyer, history}) {
   const [username, setUserName] =useState("")
   const [email, setEmail] =useState ("")
 
@@ -26,7 +26,7 @@ const handleLogin = (e) => {
 }
 
 useEffect(() => {
-  if (buyers) {
+  if (loggedInBuyer) {
     history.push('/')
   }
 })

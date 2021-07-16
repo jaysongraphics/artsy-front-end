@@ -7,7 +7,7 @@ import ArtistCollection from './ArtistCollection'
 import UpcomingGallery from './UpcomingGallery'
 import FeaturedArtist from './FeaturedArtist'
 
-function HomePage({paintings, galleries, buyers}) {
+function HomePage({paintings, galleries}) {
 
       return(
         <div className="middle">
@@ -15,7 +15,7 @@ function HomePage({paintings, galleries, buyers}) {
           <SlideShow 
           paintings={paintings}
           />
-              <ArtistCollection paintings={paintings} buyers={buyers}/>
+              <ArtistCollection paintings={paintings}/>
               <UpcomingGallery galleries={galleries}/>
               <FeaturedArtist />
             {/* <Gallery 

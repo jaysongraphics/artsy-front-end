@@ -18,17 +18,20 @@ import ArtInfo from "./components/ArtInfo"
 function App() {
   let history = useHistory()
 
+
   const [paintings, setPaintings] = useState([])
   const [galleries, setGalleries] = useState([])
   const [reviews, setReviews] = useState([])
-  const [buyers, setBuyer] = useState()
+  const [buyers, setBuyers] = useState([])
+  const [loggedInBuyer, setLoggedInBuyer] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
   const [buyerGallery, setBuyerGallery] =useState([])
+
 
   useEffect(() =>{
     fetch('http://localhost:9393/buyer')
     .then(res => res.json())
-    .then(buyerArray => setBuyer(buyerArray))
+    .then(buyerArray => setBuyers(buyerArray))
   }, []);
 
   useEffect(() =>{
@@ -61,32 +64,32 @@ fetch('http://localhost:9393/login', {
   }),
 })
   .then((res) => res.json())
-  .then((data) => {setBuyer(data)
-   history.replace('/login')
+  .then((data) => {
+    // check data if it is a user setLoggedInBuyer
+    // push to homepage
+    // else do not setLoggedInBuyer
+    // push to log in page
+    setLoggedInBuyer(data)
+    history.replace('/')
   })
   
 }
 
 function userSignup(name, email){
-  
   fetch('http://localhost:9393/signup', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      Username: name,
-      Email: email
+      username: name,
+      email: email
     }),
   })
     .then((res) => res.json())
-    .then((newUser) => {
-      setBuyer(newUser)
-      history.push("/signup")
-      
-      // set state with user 
-      
+    .then((buyer) => {
+      setLoggedInBuyer(buyer)
+      history.replace('/')
     })
-  }
-
+}
 
   // function addUser (newUser) {
   //   let buyersArray = [...buyers, newUser]
@@ -119,10 +122,10 @@ function userSignup(name, email){
       <Header />
  
           <div className="AppNav">
-            <NavBar  buyers={buyers} setBuyer={setBuyer} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+            <NavBar  loggedInBuyer={loggedInBuyer} setLoggedInBuyer={setLoggedInBuyer} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <Switch >  
               <Route path="/" exact component={() => <HomePage paintings={paintings} 
-              galleries={galleries} buyers={buyers}/>} 
+              galleries={galleries}/>} 
               />
               <Route path="/gallery" component={() => <Gallery paintings={paintings}  
               galleries={galleries}
@@ -138,7 +141,7 @@ function userSignup(name, email){
               <Route exact path="/artinfo/:id" component={() => <ArtInfo paintings={paintings}  /> 
               }/>
 
-              <Route path="/login"component={() => <LogIn userLogin={userLogin} buyers={buyers} history={history}/>}/>
+              <Route path="/login"component={() => <LogIn userLogin={userLogin} loggedInBuyer={loggedInBuyer} history={history}/>}/>
               <Route path="/signup"component={() => <SignUp userSignup={userSignup}/>}/>
               <Route path="/search-results" component={() => <SearchResults filteredArtist={filteredArtist} filteredGalleries={filteredGalleries} filteredPaintings={filteredPaintings} />} />
               </Switch>
