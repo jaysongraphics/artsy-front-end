@@ -9,6 +9,13 @@ function PaintingsCard ({painting}) {
             <h4 className = "detail-info">Country of Birth: {country}</h4>
             <h4 className = "detail-info">Date of Birth: {birthday}</h4>
             <h4 className = "detail-info">Price: ${price}</h4>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
         </div>
     )
 }

@@ -19,10 +19,13 @@ function Painting({paintings}) {
 
     if(onePainting.length == 0){
       return <>
-      <h1 className="paint-sold">This Painting has been sold!</h1>
+      <h1 className="paint-sold">Sorry, all paintings are sold out!</h1>
     
         <img id="paint-sold" src={soldout} width='400px' height=' 400px' />
-          </>
+        <br></br>
+        <br></br>
+        <br></br>
+        </>
    }
       
     

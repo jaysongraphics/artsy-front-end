@@ -32,7 +32,7 @@ function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers})
 
     
 
-    console.log(id)
+    // console.log(id)
     
 
     return (

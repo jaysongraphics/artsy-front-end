@@ -1,6 +1,7 @@
 import React from "react";
 import Painting from "./Painting"
 import {useEffect, useState} from "react"
+import {Link} from "react-router-dom"
 
 
 function LogIn({userLogin, buyers, history}) {
@@ -15,8 +16,8 @@ function LogIn({userLogin, buyers, history}) {
     setEmail(e.target.value)
 }  
 
-console.log(email);
-console.log(username);
+// console.log(email);
+// console.log(username);
 
 const handleLogin = (e) => {
   e.preventDefault()
@@ -50,7 +51,9 @@ useEffect(() => {
           </div>      
             <button onClick={handleLogin} 
             className="" className="ui black button">Log In</button>
+            <Link to="/signup">
             <button className="ui grey button">Sign Up</button>
+            </Link>
           <div id="login-buttons" className="ui buttons">
           </div>
         </div>

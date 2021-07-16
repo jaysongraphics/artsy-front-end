@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom"
 import './App.css';
 import HomePage from './components/HomePage'
 import NavBar from './components/NavBar'
-import {Router, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Gallery from './components/Gallery'
 import BuyerCollection from './components/BuyerCollection'
 import 'semantic-ui-css/semantic.min.css'
@@ -110,8 +110,8 @@ function userSignup(name, email){
     return (gallery.gallery_name.toLowerCase().includes(searchTerm.toLowerCase()))
   })
 
-  console.log(filteredGalleries)
-  console.log(filteredArtist)
+  // console.log(filteredGalleries)
+  // console.log(filteredArtist)
   // console.log(filteredPaintings)
 
     return(

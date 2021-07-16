@@ -1,6 +1,6 @@
 import React from "react";
 import {useState, useEffect} from "react"
-
+import {Link} from "react-router-dom"
 
 function SignUp({userSignup}) {
     const [usernameSignup, setUsernameSignup] =useState("")
@@ -38,9 +38,11 @@ function SignUp({userSignup}) {
               onChange={handleSignUpEmail} value={emailSignup}/>
               <label htmlFor="password">Email</label>
             </div>      
-              <button onClick={handleSignup} 
-              className="" className="ui black button">Log In</button>
-              <button className="ui grey button">Sign Up</button>
+            <button onClick={handleSignup} className="ui grey button">Sign Up</button>
+           
+            <Link to="/login">
+              <button className="" className="ui black button">Log In</button>
+              </Link>
             <div id="login-buttons" className="ui buttons">
             </div>
           </div>
