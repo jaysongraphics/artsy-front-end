@@ -18,7 +18,6 @@ import ArtInfo from "./components/ArtInfo"
 function App() {
   let history = useHistory()
 
-
   const [paintings, setPaintings] = useState([])
   const [galleries, setGalleries] = useState([])
   const [reviews, setReviews] = useState([])
@@ -26,7 +25,6 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("")
   const [buyerGallery, setBuyerGallery] =useState([])
   const [loggedInBuyer, setLoggedInBuyer] = useState(false)
-
 
   useEffect(() =>{
     fetch('http://localhost:9393/buyer')
@@ -39,7 +37,6 @@ function App() {
     .then(res => res.json())
     .then(paintingArray => setPaintings(paintingArray))
   }, []);
-  // console.log(paintings);
 
   useEffect(() =>{
     fetch('http://localhost:9393/gallery')
@@ -65,10 +62,6 @@ fetch('http://localhost:9393/login', {
 })
   .then((res) => res.json())
   .then((data) => {
-    // check data if it is a user setLoggedInBuyer
-    // push to homepage
-    // else do not setLoggedInBuyer
-    // push to log in page
     setLoggedInBuyer(data)
     history.replace('/')
   })
@@ -91,11 +84,6 @@ function userSignup(name, email){
     })
 }
 
-  // function addUser (newUser) {
-  //   let buyersArray = [...buyers, newUser]
-  //   setBuyer(buyersArray)
-  // }
-
   function addReview(newReview) {
     let reviewArray = [...reviews, newReview]
     setReviews(reviewArray)
@@ -112,10 +100,6 @@ function userSignup(name, email){
   const filteredGalleries = galleries.filter(gallery => {
     return (gallery.gallery_name.toLowerCase().includes(searchTerm.toLowerCase()))
   })
-
-  // console.log(filteredGalleries)
-  // console.log(filteredArtist)
-  // console.log(filteredPaintings)
 
     return(
       <div >
