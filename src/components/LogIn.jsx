@@ -15,9 +15,6 @@ function LogIn({userLogin, loggedInBuyer, history}) {
     setEmail(e.target.value)
 }  
 
-// console.log(email);
-// console.log(username);
-
 const handleLogin = (e) => {
   e.preventDefault()
   userLogin(username, email)

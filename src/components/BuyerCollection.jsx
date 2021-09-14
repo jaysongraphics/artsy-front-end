@@ -6,12 +6,6 @@ import PaintingsCard from "./PaintingCard";
 
 function BuyerCollection({paintings}) {
     let { id } = useParams();
-
-    // const onePainting = paintings.filter((painting) => painting.id == id);
-    // const paintingsDisplay = onePainting.map (painting => {
-    //     return <PaintingsCard key={painting.id} painting={painting}/>  
-    //   })
-
     const paintingsDisp = paintings.map (painting => {
       return (
         <div className="collectionpaintings">
@@ -24,12 +18,7 @@ function BuyerCollection({paintings}) {
         </div>
       )
     })
-
-//     const onePainting = paintings.filter((painting) => painting.id == id);
-//     const paintingscollection = onePainting.map (painting => {
-//       return <PaintingsCard key={painting.id} painting={painting}/>  
-// })
-
+    
   return (
     <div >
         <h1 className="buyer_title">Here is your Collection</h1>

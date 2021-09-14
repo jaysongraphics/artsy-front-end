@@ -26,7 +26,6 @@ function SearchResults ({filteredArtist, filteredPaintings, filteredGalleries, p
         }
     },[filteredArtist, filteredPaintings,filteredGalleries])
 
-
     // function SearchDisplay() {
     //     if (!artistSearch) {
     //         <ArtistSearch />

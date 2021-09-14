@@ -2,8 +2,6 @@ import React from "react";
 import {useParams} from "react-router-dom"
 import PaintingsCard from "./PaintingCard";
 
-
-
 function ArtInfo({paintings}) {
     let { id } = useParams();
 
@@ -12,7 +10,6 @@ function ArtInfo({paintings}) {
         return <PaintingsCard key={painting.id} painting={painting}/>  
       })
 
-      
   return (
     <div >
          <h1 className="art-info">Art info</h1>

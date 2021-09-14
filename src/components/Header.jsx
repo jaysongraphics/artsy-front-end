@@ -1,5 +1,4 @@
 import React from 'react';
-// import ImageImg from '../images/PikPng.com_graphic-designing-png_821269.png'
 import Image from '../images/creative-design.png'
 import {Link} from 'react-router-dom'
 

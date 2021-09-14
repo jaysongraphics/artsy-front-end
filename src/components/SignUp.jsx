@@ -6,7 +6,6 @@ function SignUp({userSignup}) {
     const [usernameSignup, setUsernameSignup] =useState("")
     const [emailSignup, setEmailSignup] =useState ("")
 
-
     function handleSignUpUser(e){
       setUsernameSignup(e.target.value)
     }  
@@ -15,9 +14,6 @@ function SignUp({userSignup}) {
       setEmailSignup(e.target.value)
   }  
 
-  // console.log(usernameSignup);
-  // console.log(emailSignup);
-
   const handleSignup = (e) => {
     e.preventDefault();
     userSignup(usernameSignup, emailSignup)
@@ -25,13 +21,11 @@ function SignUp({userSignup}) {
     setEmailSignup("")
   }
   
-  
-    return (
+  return (
       <div className="signup-div">
           <h1>Join Artsy today!</h1>
           <div 
           className='ui form'>        
-          {/* <form> */}
                 <div>
                 <input onChange={handleSignUpUser} type="text" name="username" placeholder="Username" 
                 value={usernameSignup}/> 
@@ -48,7 +42,6 @@ function SignUp({userSignup}) {
                 </Link>
               <div id="login-buttons" className="ui buttons">
               </div>
-              {/* </form>  */}
           </div>
   </div>
   )}

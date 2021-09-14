@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    // justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
   },
@@ -35,26 +34,10 @@ function UpcomingGallery({galleries}) {
     return da -db;
   })
 
-  // console.log(sortedGallery)
-  
-  // const upcomingGalleries = sortedGallery.map(gallery => {
-  //   return (
-  //     <div className="">
-  //       <h2 className="featured_title">{gallery.gallery_name}</h2>
-  //       <p>{gallery.date}</p>
-  //       <img className="featured_img" src={gallery.image} />
-  //     </div>
-
-  //   )
-  // })
-
-  //add clickEvent for Galleries
   function handleClick(e) {
     console.log(e.target)
-
   }
 
-  
 
   return (
     <div id="feature-gallery-div"className="featured-galleries">
@@ -81,18 +64,6 @@ function UpcomingGallery({galleries}) {
         </ImageList>
       </div>
     </div>
-
-
-
-    
-    // <div className="">
-    //   <h1 className="featured_heading">Featured Galleries</h1>
-
-    //   <div className="featured">
-    //     {upcomingGalleries}
-    //   </div>
-      
-    // </div>
 )}
 
 export default UpcomingGallery;

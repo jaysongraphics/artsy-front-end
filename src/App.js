@@ -65,7 +65,6 @@ fetch('http://localhost:9393/login', {
     setLoggedInBuyer(data)
     history.replace('/')
   })
-  
 }
 
 function userSignup(name, email){
@@ -138,6 +137,5 @@ function userSignup(name, email){
       </div>
     )
 }
-
 
 export default App;

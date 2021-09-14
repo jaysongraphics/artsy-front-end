@@ -6,23 +6,10 @@ function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers, 
     
     function handleSubmit (e) {
         e.preventDefault();
-        // let blah = buyers.find(buyer => {
-        // return (
-        // reviews.filter(review => review.buyer_id == buyer.id))
-        // })
-
-
-        // function addUserReview(){
-        //     {loggedInBuyer? : }
-        // }
-
-        // console.log(blah);
-
         fetch("http://localhost:9393/review", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-            //   buyer_id: should come from logged in user
               buyer_id: loggedInBuyer.id,
               gallery_id: gallery.id,
               comment: comment
@@ -31,8 +18,6 @@ function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers, 
             .then((res) => res.json())
             .then((newComment) => addReview(newComment))
           }
-
-    // console.log(id)
     
     return (
         <div>
