@@ -1,50 +1,33 @@
-import {useState, useEffect} from "react"
-import ArtistSearch from "./ArtInfo"
-import PaintingSearch from "./PaintingSearch"
-import GallerySearch from "./GallerySearch.jsx"
 
-function SearchResults ({filteredArtist, filteredPaintings, filteredGalleries, paintings, galleries, reviews}) {
-    const [artistSearch, setArtistSearch] = useState(false)
-    const [paintingSearch, setPaintingsSearch] = useState(false)
-    const [gallerySearch, setGallerySearch] = useState (false)
+function SearchResults ({filteredSearch, galleries}) {
+const searchResults = filteredSearch.map((painting) => {
+    let paintingGallery = galleries.filter(gallery => gallery.id === painting.gallery_id)
 
-    useEffect(() =>{
-        if (filteredArtist.length > 0) {
-            setArtistSearch(true)
-        } else {
-            setArtistSearch(false)
-        }
-        if (filteredPaintings.length > 0) {
-            setPaintingsSearch(true)
-        } else {
-            setPaintingsSearch(false)
-        }
-        if (filteredGalleries.length > 0) {
-            setGallerySearch(true)
-        } else {
-            setGallerySearch(false)
-        }
-    },[filteredArtist, filteredPaintings,filteredGalleries])
+    return (
+        <>
+        <img src={painting.image} alt={painting.painting_name} width="300" />
+        <h2>{painting.painting_name}</h2>
+        <p><b>Artist:</b> {painting.artist_name}</p>
+        <p><b>Gallery:</b> {paintingGallery[0].gallery_name}</p>
+        <br></br>
+        <br></br>
+        </>
+    )
 
-    // function SearchDisplay() {
-    //     if (!artistSearch) {
-    //         <ArtistSearch />
-    //     } else if (!paintingSearch) {
-    //         <PaintingSearch />
-    //     }else if (!gallerySearch) {
-    //         <GallerySearch />
-    //     } else {
-    //         console.log("searching..")
-    //     }
-    // }
+    
+})
     return (
         <div>
-            {artistSearch && <ArtistSearch /> }
-            {paintingSearch && <PaintingSearch />}
-            {gallerySearch && <GallerySearch />}
-  
+            <h2 className="results-title">Results based on search...</h2>
+            <br></br>
+            <br></br>
+            <div className="search-page">
+            
+            {searchResults}
+            </div> 
         </div>
+
     )
 }
 
-export default SearchResults
+export default SearchResults;

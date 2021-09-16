@@ -23,7 +23,6 @@ function App() {
   const [reviews, setReviews] = useState([])
   const [buyers, setBuyers] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
-  const [buyerGallery, setBuyerGallery] =useState([])
   const [loggedInBuyer, setLoggedInBuyer] = useState(false)
 
   useEffect(() =>{
@@ -87,25 +86,26 @@ function userSignup(name, email){
     let reviewArray = [...reviews, newReview]
     setReviews(reviewArray)
   }
+  
+  function handleSearch(e){
+    e.preventDefault();
+    history.push('/search-results')
+  }
 
-  const filteredArtist = paintings.filter(painting => {
-    return (painting.artist_name.toLowerCase().includes(searchTerm.toLowerCase()))
-  })
-
-  const filteredPaintings = paintings.filter(painting => {
+  const filteredSearch = paintings.filter(painting => {
     return (painting.painting_name.toLowerCase().includes(searchTerm.toLowerCase()))
-  })
+    ||
+    (painting.artist_name.toLowerCase().includes(searchTerm.toLowerCase()))
 
-  const filteredGalleries = galleries.filter(gallery => {
-    return (gallery.gallery_name.toLowerCase().includes(searchTerm.toLowerCase()))
   })
+  
 
     return(
       <div >
       <Header />
  
           <div className="AppNav">
-            <NavBar  loggedInBuyer={loggedInBuyer} setLoggedInBuyer={setLoggedInBuyer} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+            <NavBar  loggedInBuyer={loggedInBuyer} setLoggedInBuyer={setLoggedInBuyer} searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch}/>
           <Switch >  
               <Route path="/" exact component={() => <HomePage paintings={paintings} 
               galleries={galleries}/>} 
@@ -129,7 +129,7 @@ function userSignup(name, email){
 
               <Route path="/login"component={() => <LogIn userLogin={userLogin} loggedInBuyer={loggedInBuyer} history={history}/>}/>
               <Route path="/signup"component={() => <SignUp userSignup={userSignup}/>}/>
-              <Route path="/search-results" component={() => <SearchResults filteredArtist={filteredArtist} filteredGalleries={filteredGalleries} filteredPaintings={filteredPaintings} />} />
+              <Route path="/search-results" component={() => <SearchResults filteredSearch={filteredSearch} galleries={galleries} />} />
               </Switch>
           </div>
           <Footer />

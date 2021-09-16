@@ -3,7 +3,7 @@ function PaintingsCard ({painting}) {
     
     return (
         <div className ="paintings_card">
-            <img className = "imgcard"src={image} />
+            <img className = "imgcard"src={image} alt="" />
             <h3 className = "title-paint">Title: {painting_name}</h3>
             <h4 className = "detail-info">Artist name: {artist_name}</h4>
             <h4 className = "detail-info">Country of Birth: {country}</h4>

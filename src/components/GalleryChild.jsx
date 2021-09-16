@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import {Link} from "react-router-dom"
 
-function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers, setLoggedInBuyer, loggedInBuyer}) {
+function GalleryChild ({id, gallery, galleryReview, addReview, buyers, setLoggedInBuyer, loggedInBuyer}) {
     const [comment, setComment] = useState ("")
     
     function handleSubmit (e) {
@@ -23,7 +23,7 @@ function GalleryChild ({id, reviews, gallery, galleryReview, addReview, buyers, 
         <div>
         <div className="gallery_info">
             <h2 className="gallery_name">{gallery.gallery_name}</h2>
-            <Link to={`/buyercollection/paintings/${id}`} >   <img className="gallery_img" src={gallery.image} />  
+            <Link to={`/buyercollection/paintings/${id}`} >   <img className="gallery_img" src={gallery.image} alt="" />  
             </Link>
             <p>Location: {gallery.location}</p>
             <p>Date: {gallery.date}</p>

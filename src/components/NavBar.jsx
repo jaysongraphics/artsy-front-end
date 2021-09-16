@@ -3,7 +3,7 @@ import {Link, useHistory} from "react-router-dom"
 import SearchBar from "./SearchBar"
 
 
-function NavBar({searchTerm, setSearchTerm, setLoggedInBuyer, loggedInBuyer}) {
+function NavBar({searchTerm, setSearchTerm, setLoggedInBuyer, loggedInBuyer, handleSearch}) {
   const history = useHistory()
 
   const handleLogOut = () => {
@@ -35,7 +35,7 @@ function NavBar({searchTerm, setSearchTerm, setLoggedInBuyer, loggedInBuyer}) {
           <button id="bhover" class="ui black button" onClick={handleLogOut}>Logout</button> 
           } 
 
-          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch} />
         </nav>         
     </div>
   );

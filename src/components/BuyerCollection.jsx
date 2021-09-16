@@ -1,15 +1,13 @@
 import React from "react";
-import {useParams} from "react-router-dom"
-import PaintingsCard from "./PaintingCard";
 
 
 
 function BuyerCollection({paintings}) {
-    let { id } = useParams();
+
     const paintingsDisp = paintings.map (painting => {
       return (
         <div className="collectionpaintings">
-          <img className = "imgcard"src={painting.image} />
+          <img className = "imgcard" src={painting.image} alt="" />
           <h3 className = "title-paint">Title: {painting.painting_name}</h3>
           <h4 className = "detail-info">Artist name: {painting.artist_name}</h4>
           <h4 className = "detail-info">Country of Birth: {painting.country}</h4>

@@ -1,11 +1,9 @@
-import React, {useState, useEffect} from "react";
-import Painting from "./Painting"
 import GalleryChild from "./GalleryChild"
 
-function Gallery({paintings, galleries, reviews, addReview, buyers, setLoggedInBuyer, loggedInBuyer}) {
+function Gallery({galleries, reviews, addReview, buyers, setLoggedInBuyer, loggedInBuyer}) {
 
   const galleryInfo = galleries.map (gallery => {
-    const reviewArray = reviews.filter(review => review.gallery_id == gallery.id)
+    const reviewArray = reviews.filter(review => review.gallery_id === gallery.id)
     const galleryReview = reviewArray.map (review => <li> {review.comment}</li>)
 
     return (
